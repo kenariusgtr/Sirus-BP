@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +19,11 @@
       --input-bg: #0c1017;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -28,9 +33,20 @@
       padding: 24px 16px;
     }
 
-    .container { max-width: 840px; margin: 0 auto; }
-    header { text-align: center; margin-bottom: 16px; }
-    header h1 { font-size: 1.65rem; color: var(--accent); }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 1.65rem;
+      color: var(--accent);
+    }
 
     .card {
       background: var(--card);
@@ -63,8 +79,14 @@
       font-size: 0.95rem;
     }
 
-    .season-dates span { color: var(--muted); }
-    .season-dates strong { color: var(--text); font-variant-numeric: tabular-nums; }
+    .season-dates span {
+      color: var(--muted);
+    }
+
+    .season-dates strong {
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
 
     .btn-icon {
       display: inline-flex;
@@ -79,7 +101,11 @@
       font-size: 0.85rem;
       transition: all 0.2s;
     }
-    .btn-icon:hover { border-color: var(--accent); background: rgba(245, 158, 11, 0.1); }
+
+    .btn-icon:hover {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.1);
+    }
 
     .season-editor {
       display: none;
@@ -89,8 +115,16 @@
       gap: 10px;
       align-items: end;
     }
-    .season-editor.open { display: grid; }
-    @media (max-width: 640px) { .season-editor { grid-template-columns: 1fr; } }
+
+    .season-editor.open {
+      display: grid;
+    }
+
+    @media (max-width: 640px) {
+      .season-editor {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .btn-save-season {
       padding: 9px 14px;
@@ -102,10 +136,22 @@
       cursor: pointer;
       font-size: 0.9rem;
     }
-    .btn-save-season:hover { opacity: 0.9; }
 
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    .btn-save-season:hover {
+      opacity: 0.9;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .card h2 {
       font-size: 1.1rem;
@@ -115,7 +161,10 @@
       color: #fff;
     }
 
-    .form-group { margin-bottom: 14px; }
+    .form-group {
+      margin-bottom: 14px;
+    }
+
     .form-group label {
       display: block;
       font-size: 0.86rem;
@@ -123,6 +172,7 @@
       margin-bottom: 5px;
       line-height: 1.3;
     }
+
     .form-group input {
       width: 100%;
       padding: 9px 12px;
@@ -134,7 +184,10 @@
       outline: none;
       transition: border-color 0.2s;
     }
-    .form-group input:focus { border-color: var(--accent); }
+
+    .form-group input:focus {
+      border-color: var(--accent);
+    }
 
     .row-2 {
       display: grid;
@@ -163,8 +216,17 @@
       border: 1px solid transparent;
     }
 
-    .verdict-ok { background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #34d399; }
-    .verdict-fail { background: rgba(239, 68, 68, 0.12); border-color: rgba(239, 68, 68, 0.35); color: #f87171; }
+    .verdict-ok {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+
+    .verdict-fail {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.35);
+      color: #f87171;
+    }
 
     .stat-row {
       display: flex;
@@ -174,16 +236,47 @@
       border-bottom: 1px dashed var(--border);
       font-size: 0.93rem;
     }
-    .stat-row:last-child { border-bottom: none; }
-    .stat-label { color: var(--muted); }
-    .stat-val { font-weight: 600; font-variant-numeric: tabular-nums; }
-    .highlight { color: var(--accent); font-size: 1.05rem; }
 
-    .tips { margin-top: 20px; font-size: 0.88rem; color: var(--muted); }
-    .tips ul { padding-left: 18px; margin-top: 8px; }
-    .tips li { margin-bottom: 6px; }
+    .stat-row:last-child {
+      border-bottom: none;
+    }
 
-    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .stat-label {
+      color: var(--muted);
+    }
+
+    .stat-val {
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-size: 1.05rem;
+    }
+
+    .tips {
+      margin-top: 20px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .tips ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .tips li {
+      margin-bottom: 6px;
+    }
+
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
     .btn-reset {
       width: 100%;
       padding: 9px;
@@ -195,13 +288,74 @@
       font-size: 0.88rem;
       transition: all 0.2s;
     }
-    .btn-reset:hover { border-color: var(--accent); color: var(--text); }
+
+    .btn-reset:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .label-with-tip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .label-with-tip label {
+      margin-bottom: 0;
+    }
+
+    .info-badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: help;
+      flex-shrink: 0;
+    }
+
+    .info-badge .tooltip-text {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: 135%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 245px;
+      background: #0c1017;
+      color: var(--text);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.78rem;
+      font-weight: 400;
+      line-height: 1.35;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+      z-index: 20;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    .info-badge:hover .tooltip-text,
+    .info-badge:focus .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
-      <h1>Калькулятор Боевого Пропуска Sirus.Su</h1>
+      <h1 style="text-align: center;">Калькулятор Боевого Пропуска Sirus.Su</h1>
     </header>
 
     <!-- Блок дат сезона с кнопкой редактирования -->
@@ -210,7 +364,8 @@
         <div class="season-dates">
           <div><span>Начало сезона:</span> <strong id="dispSeasonStart">19.10.2026</strong></div>
           <div><span>Окончание сезона:</span> <strong id="dispSeasonEnd">17.01.2027</strong></div>
-          <div><span>Осталось до конца:</span> <strong id="dispSeasonDays" style="color: var(--accent);">— дн.</strong></div>
+          <div><span>Осталось до конца:</span> <strong id="dispSeasonDays" style="color: var(--accent);">— дн.</strong>
+          </div>
         </div>
         <button class="btn-icon" onclick="toggleSeasonEditor()" title="Изменить даты сезона">
           <span>✎</span> Изменить даты
@@ -228,20 +383,30 @@
         </div>
         <div style="display: flex; gap: 8px;">
           <button class="btn-save-season" onclick="saveSeasonDates()">Применить</button>
-          <button class="btn-reset" style="width: auto; padding: 9px 12px;" onclick="resetSeasonDates()" title="Вернуть даты по умолчанию">↺</button>
+          <button class="btn-reset" style="width: auto; padding: 9px 12px;" onclick="resetSeasonDates()"
+            title="Вернуть даты по умолчанию">↺</button>
         </div>
       </div>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h2>1. Ваши данные (сохраняются автоматически)</h2>
-
+        <h2 title="по умолчанию минимальный уровень для закрытия" style="text-align: center;">
+          Исходные данные
+        </h2>
         <div class="row-2">
           <div class="form-group">
-            <label for="curLvl">Текущий уровень БП</label>
+            <div class="label-with-tip">
+              <label for="curLvl">Текущий уровень БП</label>
+              <span class="info-badge" tabindex="0">!
+                <span class="tooltip-text" id="minLvlTooltip">По умолчанию указан минимальный стартовый уровень = 41 для
+                  достижения 81 ур. к концу сезона (при 0 текущих квестов, бонусе +25% на все викли и выполнении всех
+                  дейликов).</span>
+              </span>
+            </div>
             <input type="number" id="curLvl" min="1" max="200" />
           </div>
+
           <div class="form-group">
             <label for="curExp">Опыт внутри уровня</label>
             <input type="number" id="curExp" min="0" step="10" />
@@ -251,7 +416,7 @@
         <div class="row-2">
           <div class="form-group">
             <label for="targetLvl">Целевой уровень БП</label>
-            <input type="number" id="targetLvl" min="2" max="200" />
+            <input type="number" id="targetLvl" min="2" max="250" />
           </div>
           <div class="form-group">
             <label for="daysLeft">Осталось дней БП</label>
@@ -269,15 +434,15 @@
             <input type="number" id="curDailies" min="0" max="6" />
           </div>
           <div class="form-group">
-            <label for="oldSimple">Старых простых викликов (до ЧТ)</label>
-            <input type="number" id="oldSimple" min="0" max="30" />
+            <label for="curWeeklies">Текущих викликов в БП</label>
+            <input type="number" id="curWeeklies" min="0" max="30" />
           </div>
         </div>
 
         <div class="row-2">
           <div class="form-group">
-            <label for="frozen">Заморожено «противных» викликов</label>
-            <input type="number" id="frozen" min="0" max="30" />
+            <label for="skipWeeklies">Планируется к пропуску викликов</label>
+            <input type="number" id="skipWeeklies" min="0" max="30" />
           </div>
           <div class="form-group">
             <label for="bonusExp">Доп. опыт (БГ / Потасовки)</label>
@@ -292,7 +457,7 @@
       </div>
 
       <div class="card">
-        <h2>2. Результат расчёта</h2>
+        <h2 style="text-align: center;">Результат расчёта</h2>
 
         <div id="verdictBox" class="verdict-box verdict-ok"></div>
 
@@ -301,8 +466,8 @@
           <span class="stat-val" id="resNeeded">0</span>
         </div>
         <div class="stat-row">
-          <span class="stat-label">Новых викликов за сезон (по 2 в ЧТ):</span>
-          <span class="stat-val" id="resNewWeeklies">0</span>
+          <span class="stat-label">Всего викликов (текущие + новые − пропуск):</span>
+          <span class="stat-val" id="resActiveWeeklies">0</span>
         </div>
         <div class="stat-row">
           <span class="stat-label">Викликов под бонус +25% (по 2100):</span>
@@ -342,15 +507,20 @@
     <div class="card tips">
       <strong>Памятка по механике Sirus.Su:</strong>
       <ul>
-        <li><strong>Бонус выходного дня (+25%)</strong> срабатывает строго на <b>первый</b> сданный квест в субботу и <b>первый</b> в воскресенье. Первым делом сдавайте виклик (2100 опыта), а дейлики — после него.</li>
-        <li><strong>Заморозка викликов:</strong> не сдавайте выполненные и не отменяйте «противные» квесты (SoloQ, 2х2), чтобы они не выпали повторно в четверг в 03:00 МСК.</li>
-        <li><strong>Простые старые виклики</strong> лучше сдать в будни до четверга по 1680, чтобы в четверг снова поймать их в пуле.</li>
-        <li><strong>Уровни 81+:</strong> на 81 уровне лежит сундук с 3 осколками ЧБ, а каждый следующий уровень (81 → 82 и выше) стоит всего <b>2 400 опыта</b>.</li>
+        <li><strong>Бонус выходного дня (+25%)</strong> срабатывает строго на <b>первый</b> сданный квест в субботу и
+          <b>первый</b> в воскресенье. Первым делом сдавайте виклик (2100 опыта), а дейлики — после него.
+        </li>
+        <li><strong>Заморозка викликов:</strong> не сдавайте выполненные и не отменяйте «противные» квесты (SoloQ, 2х2),
+          чтобы они не выпали повторно в четверг в 03:00 МСК (укажите их в поле «Планируется к пропуску»).</li>
+        <li><strong>Простые текущие виклики</strong> лучше сдать в будни до четверга, чтобы в четверг снова поймать их в
+          пуле.</li>
+        <li><strong>Уровни 81+:</strong> на 81 уровне лежит сундук с 3 осколками ЧБ, а каждый следующий уровень (81 → 82
+          и выше) стоит всего <b>2 400 опыта</b>.</li>
       </ul>
     </div>
   </div>
   <script>
-    const STORAGE_KEY = 'sirus_bp_calc_v4';
+    const STORAGE_KEY = 'sirus_bp_calc_v6';
     const SEASON_STORAGE_KEY = 'sirus_bp_season_dates_v1';
 
     const DEFAULT_SEASON_START = '2026-10-19';
@@ -386,14 +556,14 @@
         ctx.fill();
 
         document.getElementById('favicon').href = canvas.toDataURL('image/png');
-      } catch (e) {}
+      } catch (e) { }
     }
 
     function getSeasonDates() {
       try {
         const saved = JSON.parse(localStorage.getItem(SEASON_STORAGE_KEY));
         if (saved && saved.start && saved.end) return saved;
-      } catch (e) {}
+      } catch (e) { }
       return { start: DEFAULT_SEASON_START, end: DEFAULT_SEASON_END };
     }
 
@@ -413,39 +583,6 @@
       return Math.max(0, Math.ceil(diffMs / (24 * 3600 * 1000)));
     }
 
-    function renderSeasonBar() {
-      const { start, end } = getSeasonDates();
-      const autoDays = getDefaultDaysLeft();
-      document.getElementById('dispSeasonStart').textContent = formatRuDate(start);
-      document.getElementById('dispSeasonEnd').textContent = formatRuDate(end);
-      document.getElementById('dispSeasonDays').textContent = `${autoDays} дн.`;
-      document.getElementById('inpSeasonStart').value = start;
-      document.getElementById('inpSeasonEnd').value = end;
-    }
-
-    function toggleSeasonEditor() {
-      document.getElementById('seasonEditor').classList.toggle('open');
-    }
-
-    function saveSeasonDates() {
-      const start = document.getElementById('inpSeasonStart').value || DEFAULT_SEASON_START;
-      const end = document.getElementById('inpSeasonEnd').value || DEFAULT_SEASON_END;
-      try {
-        localStorage.setItem(SEASON_STORAGE_KEY, JSON.stringify({ start, end }));
-      } catch (e) {}
-      renderSeasonBar();
-      document.getElementById('daysLeft').value = getDefaultDaysLeft();
-      document.getElementById('seasonEditor').classList.remove('open');
-      calculate();
-    }
-
-    function resetSeasonDates() {
-      try { localStorage.removeItem(SEASON_STORAGE_KEY); } catch (e) {}
-      renderSeasonBar();
-      document.getElementById('daysLeft').value = getDefaultDaysLeft();
-      calculate();
-    }
-
     function countResetsAndWeekends(daysLeft) {
       const mskNow = new Date(Date.now() + 3 * 3600 * 1000);
       const gameStart = new Date(mskNow.getTime() - 3 * 3600 * 1000);
@@ -463,6 +600,7 @@
 
       return { thursdays, weekendDays };
     }
+
     function getExpForLevel(lvl) {
       if (lvl < 10) return 400;
       if (lvl < 20) return 600;
@@ -485,6 +623,56 @@
       return sum;
     }
 
+    function getMinStartLevel(daysLeft, targetLvl = 81) {
+      const { thursdays } = countResetsAndWeekends(daysLeft);
+      const maxPotentialExp = (thursdays * 2 * 2100) + (daysLeft * 2 * 560);
+      const targetTotalExp = getCumulativeExp(targetLvl);
+
+      for (let lvl = 1; lvl < targetLvl; lvl++) {
+        const neededFromLvl = targetTotalExp - getCumulativeExp(lvl);
+        if (maxPotentialExp >= neededFromLvl) {
+          return lvl;
+        }
+      }
+      return targetLvl - 1;
+    }
+    function renderSeasonBar() {
+      const { start, end } = getSeasonDates();
+      const autoDays = getDefaultDaysLeft();
+      document.getElementById('dispSeasonStart').textContent = formatRuDate(start);
+      document.getElementById('dispSeasonEnd').textContent = formatRuDate(end);
+      document.getElementById('dispSeasonDays').textContent = `${autoDays} дн.`;
+      document.getElementById('inpSeasonStart').value = start;
+      document.getElementById('inpSeasonEnd').value = end;
+    }
+
+    function toggleSeasonEditor() {
+      document.getElementById('seasonEditor').classList.toggle('open');
+    }
+
+    function saveSeasonDates() {
+      const start = document.getElementById('inpSeasonStart').value || DEFAULT_SEASON_START;
+      const end = document.getElementById('inpSeasonEnd').value || DEFAULT_SEASON_END;
+      try {
+        localStorage.setItem(SEASON_STORAGE_KEY, JSON.stringify({ start, end }));
+      } catch (e) { }
+      renderSeasonBar();
+      const autoDays = getDefaultDaysLeft();
+      document.getElementById('daysLeft').value = autoDays;
+      document.getElementById('curLvl').value = getMinStartLevel(autoDays, 81);
+      document.getElementById('seasonEditor').classList.remove('open');
+      calculate();
+    }
+
+    function resetSeasonDates() {
+      try { localStorage.removeItem(SEASON_STORAGE_KEY); } catch (e) { }
+      renderSeasonBar();
+      const autoDays = getDefaultDaysLeft();
+      document.getElementById('daysLeft').value = autoDays;
+      document.getElementById('curLvl').value = getMinStartLevel(autoDays, 81);
+      calculate();
+    }
+
     function fmt(num) {
       return Math.round(num).toLocaleString('ru-RU');
     }
@@ -496,23 +684,24 @@
         targetLvl: document.getElementById('targetLvl').value,
         daysLeft: document.getElementById('daysLeft').value,
         curDailies: document.getElementById('curDailies').value,
-        oldSimple: document.getElementById('oldSimple').value,
-        frozen: document.getElementById('frozen').value,
+        curWeeklies: document.getElementById('curWeeklies').value,
+        skipWeeklies: document.getElementById('skipWeeklies').value,
         bonusExp: document.getElementById('bonusExp').value
       };
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      } catch (e) {}
+      } catch (e) { }
     }
 
     function applyDefaults() {
-      document.getElementById('curLvl').value = 1;
-      document.getElementById('curExp').value = 0;
+      const autoDays = getDefaultDaysLeft();
       document.getElementById('targetLvl').value = 81;
-      document.getElementById('daysLeft').value = getDefaultDaysLeft();
+      document.getElementById('curLvl').value = getMinStartLevel(autoDays, 81);
+      document.getElementById('curExp').value = 0;
+      document.getElementById('daysLeft').value = autoDays;
       document.getElementById('curDailies').value = 0;
-      document.getElementById('oldSimple').value = 0;
-      document.getElementById('frozen').value = 0;
+      document.getElementById('curWeeklies').value = 0;
+      document.getElementById('skipWeeklies').value = 0;
       document.getElementById('bonusExp').value = 0;
     }
 
@@ -522,16 +711,16 @@
       let saved = null;
       try {
         saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      } catch (e) {}
+      } catch (e) { }
 
       if (saved) {
-        document.getElementById('curLvl').value = saved.curLvl ?? 1;
-        document.getElementById('curExp').value = saved.curExp ?? 0;
         document.getElementById('targetLvl').value = saved.targetLvl ?? 81;
+        document.getElementById('curLvl').value = saved.curLvl ?? getMinStartLevel(autoDays, 81);
+        document.getElementById('curExp').value = saved.curExp ?? 0;
         document.getElementById('daysLeft').value = saved.daysLeft ?? autoDays;
         document.getElementById('curDailies').value = saved.curDailies ?? 0;
-        document.getElementById('oldSimple').value = saved.oldSimple ?? 0;
-        document.getElementById('frozen').value = saved.frozen ?? 0;
+        document.getElementById('curWeeklies').value = saved.curWeeklies ?? 0;
+        document.getElementById('skipWeeklies').value = saved.skipWeeklies ?? 0;
         document.getElementById('bonusExp').value = saved.bonusExp ?? 0;
       } else {
         applyDefaults();
@@ -544,17 +733,24 @@
       const targetLvl = Math.max(curLvl + 1, parseInt(document.getElementById('targetLvl').value) || 81);
       const daysLeft = Math.max(0, parseInt(document.getElementById('daysLeft').value) || 0);
       const curDailies = Math.min(6, Math.max(0, parseInt(document.getElementById('curDailies').value) || 0));
-      const oldSimple = Math.max(0, parseInt(document.getElementById('oldSimple').value) || 0);
+      const curWeeklies = Math.max(0, parseInt(document.getElementById('curWeeklies').value) || 0);
+      const skipWeeklies = Math.max(0, parseInt(document.getElementById('skipWeeklies').value) || 0);
       const bonusExp = Math.max(0, parseInt(document.getElementById('bonusExp').value) || 0);
 
       const { thursdays, weekendDays } = countResetsAndWeekends(daysLeft);
+            const calcMinLvl = getMinStartLevel(daysLeft, targetLvl);
+      document.getElementById('minLvlTooltip').textContent =
+        `По умолчанию указан минимальный стартовый уровень = ${calcMinLvl} для достижения ${targetLvl} ур. за ${daysLeft} дн. (при 0 текущих квестов, бонусе +25% на все викли и выполнении всех дейликов).`;
+
       document.getElementById('calendarInfo').textContent =
         `Авторасчёт по МСК за ${daysLeft} дн.: сбросов в четверг (03:00) — ${thursdays}, выходных дней (СБ/ВС) — ${weekendDays}`;
 
       const neededExp = Math.max(0, getCumulativeExp(targetLvl) - getCumulativeExp(curLvl) - curExp);
       const newWeeklies = thursdays * 2;
-      const bonusWeeklies = Math.min(newWeeklies, weekendDays);
-      const baseWeeklies = oldSimple + Math.max(0, newWeeklies - weekendDays);
+      const activeWeeklies = Math.max(0, curWeeklies + newWeeklies - skipWeeklies);
+
+      const bonusWeeklies = Math.min(activeWeeklies, weekendDays);
+      const baseWeeklies = Math.max(0, activeWeeklies - bonusWeeklies);
 
       const weeklyExp = bonusWeeklies * 2100 + baseWeeklies * 1680;
       const dailyExp = (daysLeft * 2 + curDailies) * 560;
@@ -562,7 +758,8 @@
       const margin = totalExp - neededExp;
 
       document.getElementById('resNeeded').textContent = fmt(neededExp);
-      document.getElementById('resNewWeeklies').textContent = newWeeklies + ' шт.';
+      // document.getElementById('resActiveWeeklies').textContent = `${activeWeeklies} шт. (${curWeeklies} + ${newWeeklies} − ${skipWeeklies})`;
+      document.getElementById('resActiveWeeklies').textContent = `${activeWeeklies} шт.`;
       document.getElementById('resBonusWeeklies').textContent = bonusWeeklies + ' шт.';
       document.getElementById('resBaseWeeklies').textContent = baseWeeklies + ' шт.';
       document.getElementById('resWeeklyExp').textContent = fmt(weeklyExp);
@@ -594,12 +791,17 @@
     }
 
     function syncSeasonDays() {
-      document.getElementById('daysLeft').value = getDefaultDaysLeft();
+      const autoDays = getDefaultDaysLeft();
+      document.getElementById('daysLeft').value = autoDays;
       calculate();
     }
 
     function resetDefaults() {
-      try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(SEASON_STORAGE_KEY);
+      } catch (e) { }
+      renderSeasonBar();
       applyDefaults();
       calculate();
     }
@@ -610,4 +812,5 @@
     calculate();
   </script>
 </body>
+
 </html>
